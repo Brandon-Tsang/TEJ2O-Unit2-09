@@ -15,6 +15,7 @@ basic.showIcon(IconNames.Happy)
 
 input.onGesture(Gesture.Shake, function () {
     randomNumber = randint(0, 2)
+    })
 
 // if randomNumber was 0
 if (randomNumber == 0) {
@@ -53,12 +54,13 @@ if (randomNumber == 2) {
 }
 
 // winning a point
-input.onButtonPressed(Button.A, function {
+input.onButtonPressed(Button.A, function () {
     score + 1
-    basic.showIcon(IconNames.)
-})
+    basic.showIcon(IconNames.Happy)
+    })
+
 
 // show your score
-input.onButtonPressed(Button.B, function {
+input.onButtonPressed(Button.B, function () {
     basic.showNumber(score)
-})
+    })
