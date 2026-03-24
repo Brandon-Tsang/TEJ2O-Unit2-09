@@ -13,9 +13,8 @@ let score: number = 0
 basic.clearScreen()
 basic.showIcon(IconNames.Happy)
 
-input.onGesture(Gesture.Shake, function () {
+input.onGesture(Gesture.Shake, function () {    
     randomNumber = randint(0, 2)
-    })
 
 // if randomNumber was 0
 if (randomNumber == 0) {
@@ -27,6 +26,8 @@ if (randomNumber == 0) {
     . . . . .
     `)
     basic.pause(5000)
+    basic.clearScreen()
+    basic.showIcon(IconNames.Happy)
 }
 
 // if randomNumber was 1
@@ -39,6 +40,8 @@ if (randomNumber == 1) {
     # # # # #
     `)
     basic.pause(5000)
+    basic.clearScreen()
+    basic.showIcon(IconNames.Happy)
 }
 
 // if randomNumber was 2
@@ -51,16 +54,28 @@ if (randomNumber == 2) {
     # # . . #
     `)
     basic.pause(5000)
+    basic.clearScreen()
+    basic.showIcon(IconNames.Happy)
 }
+    })
 
 // winning a point
 input.onButtonPressed(Button.A, function () {
-    score + 1
-    basic.showIcon(IconNames.Happy)
+    score = score + 1
+    basic.clearScreen()
+    basic.showLeds (`
+    . . . . .
+    . . . . #
+    . . . # .
+    # . # . .
+    . # . . .
+    `)
     })
 
 
 // show your score
 input.onButtonPressed(Button.B, function () {
-    basic.showNumber(score)
+    basic.clearScreen()
+    basic.showString("Score: " + score.toString())
+    basic.showIcon(IconNames.Happy)
     })
