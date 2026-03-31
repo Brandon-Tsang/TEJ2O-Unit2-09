@@ -13,6 +13,7 @@ randomNumber = -1
 basic.clearScreen()
 basic.showIcon(IconNames.Happy)
 
+// generate randomNumber
 input.onGesture(Gesture.Shake, function () {    
     randomNumber = randint(0, 2)
 
@@ -70,8 +71,9 @@ input.onButtonPressed(Button.A, function () {
     # . # . .
     . # . . .
     `)
+    basic.pause(2000)
+    basic.showIcon(IconNames.Happy)
 })
-
 
 // show your score
 input.onButtonPressed(Button.B, function () {
