@@ -1,7 +1,7 @@
 """
-Created by: Mr. Coxall
-Created on: Sep 2020
-This module is a Micro:bit MicroPython program
+Created by: Brandon
+Created on: Mar 2026
+This module will be able to play rock paper scissors.
 """
 
 from microbit import *
@@ -10,7 +10,7 @@ import random
 
 # variables and setup
 random_number = -1
-score = -1
+score = 0
 
 display.clear()
 display.show(Image.HAPPY)
@@ -35,10 +35,22 @@ while True:
                 "99090:"
                 "00900:"
                 "99090:"
-                "99009:")
+                "99009")
             display.show(my_image)
+
         time.sleep(5)
         display.clear()
         display.show(Image.HAPPY)
 
-        
+    # add 1 to score
+    if button_a.is_pressed():
+        score = score + 1
+        display.clear()
+        display.show(Image.YES)
+        time.sleep(2)
+        display.show(Image.HAPPY)
+
+    # show your score
+    if button_b.is_pressed():
+        display.scroll("score: " + str(score))
+        display.show(Image.HAPPY)
